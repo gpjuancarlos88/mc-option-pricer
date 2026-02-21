@@ -3,7 +3,8 @@ import numpy as np
 
 def datahandling():
 
-    data = pd.read_excel(input("Enter your file name"))
+    filename = input("Enter your file name: ")
+    data = pd.read_excel(f"data/{filename}")
 
     prices = data['Close']
 
@@ -14,5 +15,6 @@ def datahandling():
 
     return S0, std
 
-datahandling()
+if __name__ == "__main__":
+    datahandling()
 
